@@ -1,26 +1,32 @@
+Claro, vou criar um `README.md` completo e bem formatado sem trechos de código inline.
+
+### Estrutura do README.md
+
+```markdown
 # Easy Task Manager
 
 Este projeto é um sistema de gestão de tarefas que inclui um backend desenvolvido com Spring Boot e um frontend móvel desenvolvido com Android (Kotlin).
 
 ## Estrutura do Repositório
 
+```
 your-repo-name/
 ├── backend/
-│ ├── src/
-│ ├── pom.xml
-│ ├── ...
+│   ├── src/
+│   ├── pom.xml
+│   ├── ...
 ├── frontend/
-│ ├── app/
-│ ├── build.gradle
-│ ├── ...
+│   ├── app/
+│   ├── build.gradle
+│   ├── ...
 └── README.md
-
+```
 
 ## Requisitos
 
-- [Java 11+](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- [Maven 3.6.3+](https://maven.apache.org/download.cgi)
-- [Android Studio](https://developer.android.com/studio)
+- Java 11+
+- Maven 3.6.3+
+- Android Studio
 
 ## Configuração e Execução
 
@@ -28,36 +34,47 @@ your-repo-name/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/juliocoelho88/EasyTask.git
-   cd your-repo-name/backend
+   git clone https://github.com/juliocelho88/EasyTask
+   cd EasyTask/backend
+   ```
+
 2. **Execute o backend Spring Boot:**
-  mvn spring-boot:run
+   ```bash
+   mvn spring-boot:run
+   ```
+
 3. **Verifique se o backend está funcionando:**
+   - Abra um navegador e acesse `http://localhost:8080/h2-console` para visualizar o console do H2 Database.
+   - Acesse `http://localhost:8080/api/tasks` para verificar a API.
 
-Abra um navegador e acesse http://localhost:8080/h2-console para visualizar o console do H2 Database.
-Acesse http://localhost:8080/api/tasks para verificar a API.
-Frontend
-Abra o Android Studio:
+### Frontend
 
-Selecione File > Open... e navegue até o diretório frontend.
-Configure o emulador ou conecte um dispositivo físico.
+1. **Abra o Android Studio:**
+   - Selecione `File` > `Open...` e navegue até o diretório `frontend`.
 
-**Execute a aplicação Android:**
+2. **Configure o emulador ou conecte um dispositivo físico.**
 
-Clique no botão Run ou use o atalho Shift+F10.
-Configurações Importantes
-Configuração de Segurança de Rede (Android)
-Certifique-se de que o arquivo network_security_config.xml está presente em frontend/app/src/main/res/xml/:
+3. **Execute a aplicação Android:**
+   - Clique no botão `Run` ou use o atalho `Shift+F10`.
 
+## Configurações Importantes
+
+### Configuração de Segurança de Rede (Android)
+
+Certifique-se de que o arquivo `network_security_config.xml` está presente em `frontend/app/src/main/res/xml/` com o seguinte conteúdo:
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">10.0.2.2</domain>
     </domain-config>
 </network-security-config>
+```
 
-**E que o AndroidManifest.xml está configurado para usar esta configuração de segurança de rede:**
+E que o `AndroidManifest.xml` está configurado para usar esta configuração de segurança de rede:
 
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.fiap.easytask">
@@ -86,21 +103,29 @@ Certifique-se de que o arquivo network_security_config.xml está presente em fro
             </intent-filter>
         </activity>
     </application>
-</manifest>
 
-Funcionalidades
-Backend:
-API RESTful para gerenciar tarefas (CRUD).
-Persistência usando H2 Database.
-Frontend:
-Interface de usuário para visualizar, adicionar, editar e excluir tarefas.
-Comunicação com o backend via Retrofit.
-Contribuindo
+</manifest>
+```
+
+## Funcionalidades
+
+- **Backend:**
+  - API RESTful para gerenciar tarefas (CRUD).
+  - Persistência usando H2 Database.
+  
+- **Frontend:**
+  - Interface de usuário para visualizar, adicionar, editar e excluir tarefas.
+  - Comunicação com o backend via Retrofit.
+
+## Contribuindo
+
 Se você quiser contribuir com este projeto, por favor, siga os passos abaixo:
 
-Fork o repositório.
-Crie uma nova branch (git checkout -b feature/nome-da-feature).
-Faça suas alterações e commit (git commit -am 'Adicionei uma nova feature').
-Envie para o branch (git push origin feature/nome-da-feature).
-Abra um Pull Request.
+1. Fork o repositório.
+2. Crie uma nova branch (`git checkout -b feature/nome-da-feature`).
+3. Faça suas alterações e commit (`git commit -am 'Adicionei uma nova feature'`).
+4. Envie para o branch (`git push origin feature/nome-da-feature`).
+5. Abra um Pull Request.
+
+
 

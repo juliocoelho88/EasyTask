@@ -17,8 +17,6 @@ your-repo-name/
 │ ├── ...
 └── README.md
 
-markdown
-Copiar código
 
 ## Requisitos
 

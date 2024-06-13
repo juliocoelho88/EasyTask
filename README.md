@@ -1,5 +1,3 @@
-Claro, vou criar um `README.md` completo e bem formatado sem trechos de código inline.
-
 ### Estrutura do README.md
 
 ```markdown

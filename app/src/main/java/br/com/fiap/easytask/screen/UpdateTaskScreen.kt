@@ -1,16 +1,10 @@
 package br.com.fiap.easytask.ui
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -26,33 +20,40 @@ fun UpdateTaskScreen(navController: NavController, taskId: Long, taskViewModel: 
         var dueDate by remember { mutableStateOf(task.dueDate) }
         var status by remember { mutableStateOf(task.status) }
 
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(modifier = Modifier
+            .padding(16.dp)
+            .fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
             TextField(
                 value = title,
                 onValueChange = { title = it },
-                label = { Text("Title") }
+                label = { Text("Título") }
             )
             TextField(
                 value = description,
                 onValueChange = { description = it },
-                label = { Text("Description") }
+                label = { Text("Descrição") }
             )
             TextField(
                 value = dueDate,
                 onValueChange = { dueDate = it },
-                label = { Text("Due Date") }
+                label = { Text("Data") }
             )
             TextField(
                 value = status,
                 onValueChange = { status = it },
                 label = { Text("Status") }
             )
-            Button(onClick = {
-                val updatedTask = task.copy(title = title, description = description, dueDate = dueDate, status = status)
-                taskViewModel.updateTask(taskId, updatedTask)
-                navController.popBackStack()
-            }) {
-                Text("Update Task")
+            Button(
+                onClick = {
+                    val updatedTask = task.copy(title = title, description = description, dueDate = dueDate, status = status)
+                    taskViewModel.updateTask(taskId, updatedTask)
+                    navController.popBackStack()
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Atualizar Tarefa")
             }
         }
     }

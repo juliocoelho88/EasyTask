@@ -48,7 +48,7 @@ your-repo-name/
 ### Frontend
 
 1. **Abra o Android Studio:**
-   - Selecione `File` > `Open...` e navegue até o diretório `frontend`.
+   - Selecione `File` > `Open...` e navegue até o diretório `app`.
 
 2. **Configure o emulador ou conecte um dispositivo físico.**
 
